@@ -10,15 +10,15 @@ RUN apk --no-cache add nodejs npm nginx \
 WORKDIR /app
 
 # Copy files needed for install
-COPY next_build/package.json .
-COPY next_build/pnpm-lock.yaml .
+COPY next_build_output/package.json .
+COPY next_build_output/pnpm-lock.yaml .
 
 # Install prod deps
 RUN pnpm install --prod
 
 # Copy rest of build output
-COPY next_build/.next .next/
-COPY next_build/public public/
+COPY next_build_output/.next .next/
+COPY next_build_output/public public/
 
 # Copy NGINX config and startup script
 COPY ingress.conf /etc/nginx/http.d/
