@@ -15,7 +15,7 @@ echo "window._env_ = { token: '${token}' }" >> ./public/env-config.js
 export NEXT_PUBLIC_TOKEN="${token}"
 
 # Start Next.js server (port 3000) in background
-pnpm start &
+npm start &
 
 # Start NGINX in foreground (port 8099 for ingress)
 nginx -g 'daemon off;'

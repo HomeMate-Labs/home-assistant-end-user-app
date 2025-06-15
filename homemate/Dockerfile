@@ -4,17 +4,16 @@ FROM $BUILD_FROM
 
 # Install dependencies
 RUN apk --no-cache add nodejs npm nginx \
-  && npm install -g pnpm \
   && mkdir -p /run/nginx
 
 WORKDIR /app
 
 # Copy files needed for install
 COPY next_build_output/package.json .
-COPY next_build_output/pnpm-lock.yaml .
+COPY next_build_output/package-lock.json .
 
 # Install prod deps
-RUN pnpm install --prod
+RUN npm ci --only=production
 
 # Copy rest of build output
 COPY next_build_output/.next .next/
