@@ -1,4 +1,3 @@
-# Set base image
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
@@ -11,6 +10,7 @@ WORKDIR /app
 # Copy files needed for install
 COPY next_build_output/package.json .
 COPY next_build_output/package-lock.json .
+COPY next_build_output/.npmrc .npmrc
 
 # Install prod deps
 RUN npm ci --only=production
