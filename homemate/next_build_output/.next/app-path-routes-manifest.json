@@ -3,11 +3,11 @@
   "/_not-found/page": "/_not-found",
   "/page": "/",
   "/dashboard/devices/page": "/dashboard/devices",
-  "/dashboard/page": "/dashboard",
   "/dashboard/profile/page": "/dashboard/profile",
-  "/dashboard/overview/@bar_stats/page": "/dashboard/overview",
+  "/dashboard/page": "/dashboard",
+  "/dashboard/overview/@area_stats/page": "/dashboard/overview",
   "/dashboard/overview/@cards/page": "/dashboard/overview",
   "/dashboard/overview/@transactions/page": "/dashboard/overview",
-  "/dashboard/overview/@area_stats/page": "/dashboard/overview",
-  "/dashboard/overview/@pie_stats/page": "/dashboard/overview"
+  "/dashboard/overview/@pie_stats/page": "/dashboard/overview",
+  "/dashboard/overview/@bar_stats/page": "/dashboard/overview"
 }
