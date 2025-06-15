@@ -1,0 +1,21 @@
+name: "HomeMate"
+version: "1.0.0"
+slug: "home_mate"
+description: "HomeMate is a platform that turns your smart home into a passive income stream."
+url: "https://www.thehomemate.xyz/"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: services
+ingress: true
+ingress_port: 8099
+map:
+  - share:rw
+schema:
+  token: password
+panel_icon: mdi:home-analytics
+panel_admin: false

@@ -1,0 +1,13 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/dashboard/devices/page": "app/dashboard/devices/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/overview/@bar_stats/page": "app/dashboard/overview/@bar_stats/page.js",
+  "/dashboard/overview/@cards/page": "app/dashboard/overview/@cards/page.js",
+  "/dashboard/overview/@transactions/page": "app/dashboard/overview/@transactions/page.js",
+  "/dashboard/overview/@area_stats/page": "app/dashboard/overview/@area_stats/page.js",
+  "/dashboard/overview/@pie_stats/page": "app/dashboard/overview/@pie_stats/page.js"
+}
