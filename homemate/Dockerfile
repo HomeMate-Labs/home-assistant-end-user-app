@@ -2,7 +2,9 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install dependencies
-RUN apk --no-cache add nodejs npm nginx \
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+  && apk --no-cache add nodejs-current npm nginx \
+  && ln -sf /usr/bin/node /usr/local/bin/node \
   && mkdir -p /run/nginx
 
 WORKDIR /app
