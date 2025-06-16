@@ -1,4 +1,5 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+#ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+ARG BUILD_FROM
 # ---- Stage 1: Pull Node.js 20 from official Alpine-based image ----
 FROM node:22-alpine AS node
 
