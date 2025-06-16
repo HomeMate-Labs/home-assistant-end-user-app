@@ -1,8 +1,10 @@
+# ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install dependencies
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+  && apk update \
   && apk --no-cache add nodejs-current npm nginx \
   && ln -sf /usr/bin/node /usr/local/bin/node \
   && mkdir -p /run/nginx

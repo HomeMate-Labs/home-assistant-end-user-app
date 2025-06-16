@@ -5,6 +5,8 @@ CONFIG_PATH=/data/options.json
 
 echo "[run.sh] Starting..."
 
+echo "[run.sh] Node version: $(node -v)"
+
 # Extract token
 # token=$(jq --raw-output '.token // empty' "$CONFIG_PATH")
 # echo "[run.sh] Token from config: $token"
