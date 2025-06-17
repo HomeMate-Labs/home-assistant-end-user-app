@@ -13,12 +13,20 @@ app.prepare().then(() => {
 
   server.use((req, res, nextMiddleware) => {
     // Dynamically set assetPrefix for this request
-    const ingressBase = req.url.match(
+    const referer = req.headers.referer || '';
+    const originalUri = req.headers['x-original-uri'] || '';
+    const ingressBase1 = req.url.match(
       /^\/api\/hassio_ingress\/([a-zA-Z0-9-_]+)/
     );
-    console.log('Request url', req.url, ingressBase);
-    if (ingressBase) {
-      const basePath = `/api/hassio_ingress/${ingressBase[1]}`;
+    const ingressBase2 = referer.match(
+      /^\/api\/hassio_ingress\/([a-zA-Z0-9-_]+)/
+    );
+    const ingressBase3 = originalUri.match(
+      /^\/api\/hassio_ingress\/([a-zA-Z0-9-_]+)/
+    );
+    console.log('Request url', req.url, referer, originalUri, ingressBase1, ingressBase2, ingressBase3);
+    if (ingressBase1) {
+      const basePath = `/api/hassio_ingress/${ingressBase1[1]}`;
       app.setAssetPrefix(basePath);
     } else {
       app.setAssetPrefix('');
