@@ -1,13 +1,13 @@
 {
   "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
+  "/dashboard/page": "/dashboard",
   "/page": "/",
   "/dashboard/profile/page": "/dashboard/profile",
-  "/dashboard/page": "/dashboard",
+  "/_not-found/page": "/_not-found",
+  "/dashboard/devices/page": "/dashboard/devices",
+  "/dashboard/overview/@area_stats/page": "/dashboard/overview",
+  "/dashboard/overview/@bar_stats/page": "/dashboard/overview",
   "/dashboard/overview/@cards/page": "/dashboard/overview",
   "/dashboard/overview/@pie_stats/page": "/dashboard/overview",
-  "/dashboard/overview/@area_stats/page": "/dashboard/overview",
-  "/dashboard/overview/@transactions/page": "/dashboard/overview",
-  "/dashboard/overview/@bar_stats/page": "/dashboard/overview",
-  "/dashboard/devices/page": "/dashboard/devices"
+  "/dashboard/overview/@transactions/page": "/dashboard/overview"
 }
