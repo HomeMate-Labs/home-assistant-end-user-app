@@ -81,8 +81,7 @@ app.prepare().then(() => {
       ingressBase1,
       ingressBase2,
       ingressBase3,
-      match,
-      document.URL
+      match    
     );
     // if (ingressBase1) {
     //   const basePath = `/api/hassio_ingress/${ingressBase1[1]}`;
