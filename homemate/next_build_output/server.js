@@ -74,7 +74,7 @@ app.prepare().then(() => {
       /^\/api\/hassio_ingress\/[a-zA-Z0-9-_]+/
     );
     console.log(
-      'Request url',
+      'Server all Request url',
       req.url,
       referer,
       originalUri,
