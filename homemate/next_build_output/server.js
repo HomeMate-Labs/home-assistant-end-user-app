@@ -24,9 +24,30 @@ app.prepare().then(() => {
     const ingressBase3 = originalUri.match(
       /^\/api\/hassio_ingress\/([a-zA-Z0-9-_]+)/
     );
-    console.log('Request url', req.url, referer, originalUri, ingressBase1, ingressBase2, ingressBase3);
-    if (ingressBase1) {
-      const basePath = `/api/hassio_ingress/${ingressBase1[1]}`;
+    const ingressPathHeader = req.headers['x-ingress-path'];
+
+    const match = ingressPathHeader?.match(
+      /^\/api\/hassio_ingress\/[a-zA-Z0-9-_]+/
+    );
+    console.log(
+      'Request url',
+      req.url,
+      referer,
+      originalUri,
+      ingressBase1,
+      ingressBase2,
+      ingressBase3,
+      match
+    );
+    // if (ingressBase1) {
+    //   const basePath = `/api/hassio_ingress/${ingressBase1[1]}`;
+    //   app.setAssetPrefix(basePath);
+    // } else {
+    //   app.setAssetPrefix('');
+    // }
+    if (match && match[0]) {
+      const basePath = match[0];
+      console.log('🛠️ Setting assetPrefix to:', basePath);
       app.setAssetPrefix(basePath);
     } else {
       app.setAssetPrefix('');
