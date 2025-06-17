@@ -9,12 +9,13 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p 3000",
+    "start": "cross-env NEXT_DISABLE_TURBOPACK=1 NODE_ENV=production node server.js",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
     "lint:strict": "eslint --max-warnings=0 src",
     "format": "prettier --write .",
-    "format:check": "prettier -c -w ."
+    "format:check": "prettier -c -w .",
+    "prepare": "husky"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,css,less,scss,sass}": [
@@ -63,6 +64,7 @@
     "date-fns": "^4.1.0",
     "eslint": "8.48.0",
     "eslint-config-next": "15.1.0",
+    "express": "^4.20.0",
     "input-otp": "^1.4.2",
     "kbar": "^0.1.0-beta.45",
     "lucide-react": "^0.476.0",
@@ -100,6 +102,7 @@
     "@types/sort-by": "^1.2.3",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "cross-env": "^7.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "prettier": "3.4.2",
